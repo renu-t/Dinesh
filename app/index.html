@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>AngularJS puzzle</title>
+    <title>Sliding Game</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <script type="text/javascript" src="js/lib/angular/angular.js"></script>
     <script type="text/javascript" src="js/puzzle/slidingPuzzle.js"></script>
-	<script type="text/javascript" src="js/puzzle/wordSearchPuzzle.js"></script>
+	
 	<script type="text/javascript" src="js/app.js"></script>
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 </head>
@@ -49,19 +49,6 @@
 		</fieldset>
 	</script>
 
-	<script type="text/ng-template" id="word-search-puzzle">
-		<div id="word-search" ng-controller="wordSearchCtrl">
-			<ul class="words">
-				<li ng-repeat="word in puzzle.words" ng-class="{'found': word.found}">
-					{{word.name}}
-				</li>
-			</ul>
-			<word-search-puzzle matrix="matrix" words="words" api="puzzle"></word-search-puzzle>
-			<div class="status">
-				<button ng-click="puzzle.solve()" ng-show="!puzzle.solved" class="solve">solve</button>
-				<strong ng-show="puzzle.solved" ng-show="puzzle.solved">Solved!</strong>
-			</div>
-		</div>
-	</script>
+	
 </body>
 </html>
