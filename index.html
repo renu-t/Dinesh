@@ -1,67 +1,52 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>AngularJS puzzle</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <script type="text/javascript" src="js/lib/angular/angular.js"></script>
-    <script type="text/javascript" src="js/puzzle/slidingPuzzle.js"></script>
-	<script type="text/javascript" src="js/puzzle/wordSearchPuzzle.js"></script>
-	<script type="text/javascript" src="js/app.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
-</head>
-<body ng-app="puzzleApp">
-	<ul id="types">
-		<li ng-repeat="t in types" ng-class="{'selected': t.id == type}">
-			<a ng-href="#/{{t.id}}">{{t.title}}</a>
-		</li>
-	</ul>
 
-	<div ng-include="type"></div>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Dinesh : Sliding puzzle ">
 
-	<a id="fork" href="https://github.com/pdanis/angular-puzzle" title="Fork me on GitHub"></a>
-	<a id="powered" href="http://angularjs.org" title="powered by AngularJS"><img src="http://www.angularjs.org/img/AngularJS-large.png"/></a>
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-	<script type="text/ng-template" id="sliding-puzzle">
-		<fieldset id="sliding-simple">
-			<legend>Basic</legend>
-			<sliding-puzzle size="3x3" src="img/angular.png"></sliding-puzzle>
-		</fieldset><br/>
+    <title>Dinesh</title>
+  </head>
 
-		<fieldset id="sliding-advanced" ng-controller="slidingAdvancedCtrl">
-			<legend>Advanced</legend>
-			<div ng-repeat="puzzle in puzzles">
-				<h2>{{puzzle.title}}</h2>
-				<div class="src">
-					<input type="text" ng-model="puzzle.src"/>
-				</div>
-				<div class="status">
-					moves: <strong>{{puzzle.api.moves}}</strong><br/>
-					solved: <strong>{{puzzle.api.isSolved()}}</strong>
-				</div>
-				<div class="size">
-					rows: <input type="text" ng-model="puzzle.rows" size="2"/>
-					cols: <input type="text" ng-model="puzzle.cols" size="2"/><br/>
-					<button ng-click="puzzle.api.shuffle()">shuffle</button>
-					<button ng-click="puzzle.api.solve()">solve</button>
-				</div>
-				<sliding-puzzle api="puzzle.api" size="{{puzzle.rows}}x{{puzzle.cols}}" src="{{puzzle.src}}"></sliding-puzzle>
-			</div>
-		</fieldset>
-	</script>
+  <body>
 
-	<script type="text/ng-template" id="word-search-puzzle">
-		<div id="word-search" ng-controller="wordSearchCtrl">
-			<ul class="words">
-				<li ng-repeat="word in puzzle.words" ng-class="{'found': word.found}">
-					{{word.name}}
-				</li>
-			</ul>
-			<word-search-puzzle matrix="matrix" words="words" api="puzzle"></word-search-puzzle>
-			<div class="status">
-				<button ng-click="puzzle.solve()" ng-show="!puzzle.solved" class="solve">solve</button>
-				<strong ng-show="puzzle.solved" ng-show="puzzle.solved">Solved!</strong>
-			</div>
-		</div>
-	</script>
-</body>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/sruthithorati/Dinesh">View on GitHub</a>
+
+          <h1 id="project_title">Dinesh</h1>
+          <h2 id="project_tagline">Sliding puzzle </h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/sruthithorati/Dinesh/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/sruthithorati/Dinesh/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="sliding-game" class="anchor" href="#sliding-game"><span class="octicon octicon-link"></span></a>Sliding Game</h1>
+
+<p>Simple Sliding Game for Dinesh!</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Dinesh maintained by <a href="https://github.com/sruthithorati">sruthithorati</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
 </html>
